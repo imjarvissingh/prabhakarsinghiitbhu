@@ -1,9 +1,10 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" data-palette="night">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Prabhakar Singh | Professor of Physics, IIT (BHU)</title>
+<meta name="theme-color" content="#0a0a0b">
 <meta name="description" content="Prabhakar Singh, Professor of Physics at IIT (BHU) Varanasi. Research on solid electrolytes, fuel cells, halide perovskites and electrocatalysis.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -34,8 +35,9 @@
   <div class="look">
     <button class="icon" id="look" type="button" aria-expanded="false" aria-controls="panel"><span aria-hidden="true">Aa&nbsp;</span>Appearance</button>
     <div class="panel" id="panel" hidden>
-      <div><h5>Mode</h5><div class="opts" data-g="theme"><button type="button" data-v="auto">Auto</button><button type="button" data-v="light">Light</button><button type="button" data-v="dark">Dark</button></div></div>
+      <div class="moderow"><h5>Mode</h5><div class="opts" data-g="theme"><button type="button" data-v="auto">Auto</button><button type="button" data-v="light">Light</button><button type="button" data-v="dark">Dark</button></div></div>
       <div><h5>Colour</h5><div class="opts" data-g="palette">
+        <button type="button" data-v="night"><span class="sw"><i style="background:#0a0a0b;box-shadow:0 0 0 1px #555"></i><i style="background:#ffb02e"></i></span>Night</button>
         <button type="button" data-v="indigo"><span class="sw"><i style="background:#14183f"></i><i style="background:#b8470d"></i></span>Indigo</button>
         <button type="button" data-v="ocean"><span class="sw"><i style="background:#0c1f3a"></i><i style="background:#0a6c8f"></i></span>Ocean</button>
         <button type="button" data-v="maroon"><span class="sw"><i style="background:#2a0f14"></i><i style="background:#8c1d2f"></i></span>Maroon</button></div></div>
@@ -87,6 +89,17 @@
       <svg id="arr" viewBox="0 0 320 150" role="img" aria-label="Arrhenius plot of conductivity against inverse temperature"></svg>
       <p class="cap">&sigma;T = A exp(&minus;E<sub>a</sub>/k<sub>B</sub>T). Conductivity rises steeply with temperature and falls with a higher barrier, which is why lowering E<sub>a</sub> is the central goal in electrolyte design.</p>
     </div>
+  </section>
+
+  <section class="start wrap" id="start" aria-labelledby="startT">
+    <h2 id="startT">Where would you like to start?</h2>
+    <div class="opts who" id="who" role="group" aria-label="I am a">
+      <button type="button" data-v="student">Prospective student</button>
+      <button type="button" data-v="researcher">Researcher</button>
+      <button type="button" data-v="collab">Collaborator or industry</button>
+      <button type="button" data-v="visitor">Journalist or visitor</button>
+    </div>
+    <div class="rec" id="rec" aria-live="polite"><p class="note">Choose one and I will point you to the right place.</p></div>
   </section>
 
   <section id="about" class="sec wrap">
@@ -200,6 +213,13 @@
     </div>
   </section>
 
+  <section id="faq" class="sec wrap">
+    <h2 class="side">Questions</h2>
+    <div class="main">
+      <ul class="faq" id="faq-list"></ul>
+    </div>
+  </section>
+
   <section id="contact" class="sec wrap">
     <h2 class="side">Contact</h2>
     <div class="main cols2">
@@ -208,7 +228,17 @@
         <p><a class="mail" id="mail" href="#"></a></p>
       </address>
       <div>
-        <p class="note">Prospective doctoral students and collaborators are welcome to write with a short description of their interests.</p>
+        <form id="cform" class="cform" novalidate>
+          <p class="note">Prospective doctoral students and collaborators are welcome to write with a short description of their interests.</p>
+          <label for="cn">Your name</label><input id="cn" autocomplete="name" required>
+          <label for="ce">Your email</label><input id="ce" type="email" autocomplete="email" required>
+          <label for="cw">I am a</label>
+          <select id="cw"><option>Prospective student</option><option>Researcher</option><option>Collaborator or industry</option><option>Journalist or visitor</option><option>Other</option></select>
+          <label for="cm">Message</label><textarea id="cm" rows="5" required></textarea>
+          <p class="err" id="cerr" role="alert" hidden></p>
+          <div class="cta"><button class="btn" type="submit">Write an email</button><button class="btn alt" type="button" id="copyMail">Copy address</button></div>
+          <p class="small" id="cnote">This opens your email app with the message ready to send. If nothing opens, copy the address and write directly.</p>
+        </form>
         <p><a id="profile" href="#" target="_blank" rel="noopener">Institute faculty page</a><br><a id="scholar3" href="#" target="_blank" rel="noopener">Google Scholar profile</a></p>
       </div>
     </div>

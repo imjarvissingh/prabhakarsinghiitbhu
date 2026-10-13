@@ -110,11 +110,11 @@
   /* ---------- header: theme, menu, active section ---------- */
   var root = document.documentElement;
   /* appearance panel */
-  var pref = { theme: "auto", palette: "indigo", read: "serif", size: "md" };
+  var pref = { theme: "auto", palette: "night", read: "serif", size: "md" };
   try { Object.assign(pref, JSON.parse(localStorage.getItem("look") || "{}")); } catch (e) {}
   function applyLook() {
     if (pref.theme === "auto") root.removeAttribute("data-theme"); else root.dataset.theme = pref.theme;
-    if (pref.palette === "indigo") root.removeAttribute("data-palette"); else root.dataset.palette = pref.palette;
+    root.dataset.palette = pref.palette;
     root.dataset.read = pref.read; root.dataset.size = pref.size;
     $("panel").querySelectorAll(".opts").forEach(function (g) {
       g.querySelectorAll("button").forEach(function (b) { b.setAttribute("aria-pressed", pref[g.dataset.g] === b.dataset.v); });
@@ -305,4 +305,43 @@
   readouts(performance.now() + 1000);
   if (reduce) { $("rate").textContent = "paused"; $("sigma").textContent = fmtSigma(relSigma()); tSl.addEventListener("input", function () { $("sigma").textContent = fmtSigma(relSigma()); }); eSl.addEventListener("input", function () { $("sigma").textContent = fmtSigma(relSigma()); }); }
   else raf = requestAnimationFrame(loop);
+
+  /* ---------- where to start ---------- */
+  var REC = {
+    student: ["Welcome. Start with the research themes to see if they match your interests, then read what the current group works on and write with a short note about your background.", [["Research themes", "#research"], ["Research group", "#group"], ["Write to him", "#contact"]]],
+    researcher: ["The publications are searchable by theme, and Google Scholar has the full record with citation counts.", [["Browse publications", "#publications"], ["Google Scholar", S.scholar]]],
+    collab: ["His funded projects span fuel cells, perovskite solar cells and storage, with agencies including DST, SERB, DRDO and CSIR. International collaborations are listed under Honours.", [["Sponsored projects", "#research"], ["Collaborations", "#honours"], ["Get in touch", "#contact"]]],
+    visitor: ["A short biography, his career and the awards he has received are the best places to begin.", [["About", "#about"], ["Honours", "#honours"], ["Contact", "#contact"]]]
+  };
+  $("who").addEventListener("click", function (e) {
+    var b = e.target.closest("button"); if (!b) return;
+    this.querySelectorAll("button").forEach(function (x) { x.setAttribute("aria-pressed", x === b); });
+    var r = REC[b.dataset.v];
+    set("rec", "<p>" + esc(r[0]) + "</p><div class='go-row'>" + r[1].map(function (l) {
+      return "<a class='btn alt' href='" + esc(l[1]) + "'" + (l[1].charAt(0) === "#" ? "" : " target='_blank' rel='noopener'") + ">" + esc(l[0]) + "</a>";
+    }).join("") + "</div>");
+  });
+
+  /* ---------- FAQ ---------- */
+  set("faq-list", S.faq.map(function (f) {
+    return "<li><details><summary>" + esc(f[0]) + "</summary><div class='a'>" + esc(f[1]) + "<br><a href='#" + f[2] + "'>Go to section &rarr;</a></div></details></li>";
+  }).join(""));
+
+  /* ---------- contact form (opens the visitor's email app) ---------- */
+  var cform = $("cform");
+  cform.addEventListener("submit", function (e) {
+    e.preventDefault();
+    var n = $("cn").value.trim(), em = $("ce").value.trim(), msg = $("cm").value.trim(), err = $("cerr");
+    if (!n || !/^\S+@\S+\.\S+$/.test(em) || !msg) { err.textContent = "Please add your name, a valid email and a message."; err.hidden = false; return; }
+    err.hidden = true;
+    var body = msg + "\n\n" + n + "\n" + em + "\n(" + $("cw").value + ")";
+    var href = "mailto:" + S.email + "?subject=" + encodeURIComponent("Enquiry from " + n + " (" + $("cw").value + ")") + "&body=" + encodeURIComponent(body);
+    window.location.href = href;
+    $("cnote").textContent = "If your email app did not open, copy the address below the form and send your message directly to " + S.email + ".";
+  });
+  $("copyMail").addEventListener("click", function () {
+    var b = this, done = function () { b.textContent = "Copied"; setTimeout(function () { b.textContent = "Copy address"; }, 1800); };
+    try { navigator.clipboard.writeText(S.email).then(done, function () { b.textContent = S.email; }); } catch (e) { b.textContent = S.email; }
+  });
+
 })();
