@@ -10,6 +10,7 @@
 <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Serif:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%230c1f3a'/%3E%3Ctext x='16' y='22' font-family='monospace' font-size='15' font-weight='700' text-anchor='middle' fill='%235cc2e6'%3EPS%3C/text%3E%3C/svg%3E">
 <meta property="og:type" content="profile">
+<meta property="og:image" content="assets/portrait.jpg">
 <meta property="og:title" content="Prabhakar Singh | Professor of Physics, IIT (BHU)">
 <meta property="og:description" content="Solid electrolytes, fuel cells, halide perovskites and electrocatalysis. Publications, research group and contact.">
 <meta name="twitter:card" content="summary">
@@ -30,16 +31,32 @@
     <a href="#honours">Honours</a>
     <a href="#contact">Contact</a>
   </nav>
-  <button class="icon" id="theme" type="button" aria-label="Switch colour theme"><span aria-hidden="true">&#9728;</span></button>
+  <div class="look">
+    <button class="icon" id="look" type="button" aria-expanded="false" aria-controls="panel"><span aria-hidden="true">Aa&nbsp;</span>Appearance</button>
+    <div class="panel" id="panel" hidden>
+      <div><h5>Mode</h5><div class="opts" data-g="theme"><button type="button" data-v="auto">Auto</button><button type="button" data-v="light">Light</button><button type="button" data-v="dark">Dark</button></div></div>
+      <div><h5>Colour</h5><div class="opts" data-g="palette">
+        <button type="button" data-v="indigo"><span class="sw"><i style="background:#14183f"></i><i style="background:#b8470d"></i></span>Indigo</button>
+        <button type="button" data-v="ocean"><span class="sw"><i style="background:#0c1f3a"></i><i style="background:#0a6c8f"></i></span>Ocean</button>
+        <button type="button" data-v="maroon"><span class="sw"><i style="background:#2a0f14"></i><i style="background:#8c1d2f"></i></span>Maroon</button></div></div>
+      <div><h5>Reading text</h5><div class="opts" data-g="read"><button type="button" data-v="serif">Serif</button><button type="button" data-v="sans">Sans</button></div></div>
+      <div><h5>Text size</h5><div class="opts" data-g="size"><button type="button" data-v="md">Standard</button><button type="button" data-v="lg">Larger</button></div></div>
+    </div>
+  </div>
   <button class="icon menu" id="menu" type="button" aria-expanded="false" aria-controls="nav" aria-label="Menu"><span aria-hidden="true">&#9776;</span></button>
 </header>
 
 <main id="main">
   <section class="hero wrap" id="home">
     <div class="hero-copy">
-      <p class="kicker">Department of Physics &middot; IIT (BHU) Varanasi</p>
-      <h1>Prabhakar Singh</h1>
-      <p class="role">Professor of Physics (HAG) and former Head of Department</p>
+      <div class="id">
+        <img class="avatar" src="assets/portrait.jpg" alt="Professor Prabhakar Singh" width="277" height="357">
+        <div>
+          <p class="kicker">Department of Physics &middot; IIT (BHU) Varanasi</p>
+          <h1>Prabhakar Singh</h1>
+          <p class="role">Professor of Physics (HAG) and former Head of Department</p>
+        </div>
+      </div>
       <p class="lede">Ions move through solids. His group studies how, and uses that to build better fuel cells, solar cells and catalysts for clean hydrogen.</p>
       <p class="cta">
         <a class="btn" href="#publications">Publications</a>
@@ -77,7 +94,7 @@
     <div class="main">
       <div class="about">
         <figure class="portrait">
-          <div class="ph" id="ph"><span aria-hidden="true">PS</span></div>
+          <img class="avatar" src="assets/portrait.jpg" alt="Professor Prabhakar Singh" width="277" height="357" loading="lazy">
           <figcaption>Professor, Department of Physics</figcaption>
         </figure>
         <div class="prose">

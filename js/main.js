@@ -106,20 +106,31 @@
     $("publications").scrollIntoView({ behavior: reduce ? "auto" : "smooth" });
   });
 
-  /* portrait: shows if assets/portrait.jpg exists */
-  var img = new Image();
-  img.onload = function () { var ph = $("ph"); ph.style.backgroundImage = "url(assets/portrait.jpg)"; ph.classList.add("has"); };
-  img.src = "assets/portrait.jpg";
 
   /* ---------- header: theme, menu, active section ---------- */
   var root = document.documentElement;
-  $("theme").addEventListener("click", function () {
-    var dark = root.dataset.theme ? root.dataset.theme === "dark" : matchMedia("(prefers-color-scheme: dark)").matches;
-    root.dataset.theme = dark ? "light" : "dark";
-    try { localStorage.setItem("theme", root.dataset.theme); } catch (e) {}
+  /* appearance panel */
+  var pref = { theme: "auto", palette: "indigo", read: "serif", size: "md" };
+  try { Object.assign(pref, JSON.parse(localStorage.getItem("look") || "{}")); } catch (e) {}
+  function applyLook() {
+    if (pref.theme === "auto") root.removeAttribute("data-theme"); else root.dataset.theme = pref.theme;
+    if (pref.palette === "indigo") root.removeAttribute("data-palette"); else root.dataset.palette = pref.palette;
+    root.dataset.read = pref.read; root.dataset.size = pref.size;
+    $("panel").querySelectorAll(".opts").forEach(function (g) {
+      g.querySelectorAll("button").forEach(function (b) { b.setAttribute("aria-pressed", pref[g.dataset.g] === b.dataset.v); });
+    });
     colors = null;
+  }
+  $("panel").addEventListener("click", function (e) {
+    var b = e.target.closest("button"); if (!b) return;
+    pref[b.parentNode.dataset.g] = b.dataset.v; applyLook();
+    try { localStorage.setItem("look", JSON.stringify(pref)); } catch (er) {}
   });
-  try { var saved = localStorage.getItem("theme"); if (saved) root.dataset.theme = saved; } catch (e) {}
+  $("look").addEventListener("click", function (e) {
+    e.stopPropagation(); var open = $("panel").hidden; $("panel").hidden = !open; this.setAttribute("aria-expanded", open);
+  });
+  document.addEventListener("click", function (e) { if (!$("panel").hidden && !e.target.closest(".look")) { $("panel").hidden = true; $("look").setAttribute("aria-expanded", "false"); } });
+  document.addEventListener("keydown", function (e) { if (e.key === "Escape" && !$("panel").hidden) { $("panel").hidden = true; $("look").setAttribute("aria-expanded", "false"); $("look").focus(); } });
   var totop = $("totop");
   window.addEventListener("scroll", function () { totop.hidden = window.scrollY < 900; }, { passive: true });
   var nav = $("nav"), menu = $("menu");
