@@ -1,0 +1,226 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Prabhakar Singh | Professor of Physics, IIT (BHU)</title>
+<meta name="description" content="Prabhakar Singh, Professor of Physics at IIT (BHU) Varanasi. Research on solid electrolytes, fuel cells, halide perovskites and electrocatalysis.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Serif:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%230c1f3a'/%3E%3Ctext x='16' y='22' font-family='monospace' font-size='15' font-weight='700' text-anchor='middle' fill='%235cc2e6'%3EPS%3C/text%3E%3C/svg%3E">
+<meta property="og:type" content="profile">
+<meta property="og:image" content="assets/portrait.jpg">
+<meta property="og:title" content="Prabhakar Singh | Professor of Physics, IIT (BHU)">
+<meta property="og:description" content="Solid electrolytes, fuel cells, halide perovskites and electrocatalysis. Publications, research group and contact.">
+<meta name="twitter:card" content="summary">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Person","name":"Prabhakar Singh","jobTitle":"Professor of Physics","affiliation":{"@type":"CollegeOrUniversity","name":"Indian Institute of Technology (BHU) Varanasi"},"alumniOf":["University of Münster","Banaras Hindu University"],"knowsAbout":["Solid electrolytes","Fuel cells","Halide perovskites","Electrocatalysis","Dielectric materials"],"email":"psingh.app@iitbhu.ac.in","sameAs":["https://scholar.google.com/citations?user=HVzaONMAAAAJ&hl=en","https://www.iitbhu.ac.in/dept/phy/people/psinghapp"]}</script>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="top" id="top">
+  <a class="brand" href="#home">Prabhakar Singh</a>
+  <nav id="nav" aria-label="Sections">
+    <a href="#about">About</a>
+    <a href="#research">Research</a>
+    <a href="#publications">Publications</a>
+    <a href="#teaching">Teaching</a>
+    <a href="#group">Group</a>
+    <a href="#honours">Honours</a>
+    <a href="#contact">Contact</a>
+  </nav>
+  <div class="look">
+    <button class="icon" id="look" type="button" aria-expanded="false" aria-controls="panel"><span aria-hidden="true">Aa&nbsp;</span>Appearance</button>
+    <div class="panel" id="panel" hidden>
+      <div><h5>Mode</h5><div class="opts" data-g="theme"><button type="button" data-v="auto">Auto</button><button type="button" data-v="light">Light</button><button type="button" data-v="dark">Dark</button></div></div>
+      <div><h5>Colour</h5><div class="opts" data-g="palette">
+        <button type="button" data-v="indigo"><span class="sw"><i style="background:#14183f"></i><i style="background:#b8470d"></i></span>Indigo</button>
+        <button type="button" data-v="ocean"><span class="sw"><i style="background:#0c1f3a"></i><i style="background:#0a6c8f"></i></span>Ocean</button>
+        <button type="button" data-v="maroon"><span class="sw"><i style="background:#2a0f14"></i><i style="background:#8c1d2f"></i></span>Maroon</button></div></div>
+      <div><h5>Reading text</h5><div class="opts" data-g="read"><button type="button" data-v="serif">Serif</button><button type="button" data-v="sans">Sans</button></div></div>
+      <div><h5>Text size</h5><div class="opts" data-g="size"><button type="button" data-v="md">Standard</button><button type="button" data-v="lg">Larger</button></div></div>
+    </div>
+  </div>
+  <button class="icon menu" id="menu" type="button" aria-expanded="false" aria-controls="nav" aria-label="Menu"><span aria-hidden="true">&#9776;</span></button>
+</header>
+
+<main id="main">
+  <section class="hero wrap" id="home">
+    <div class="hero-copy">
+      <div class="id">
+        <img class="avatar" src="assets/portrait.jpg" alt="Professor Prabhakar Singh" width="277" height="357">
+        <div>
+          <p class="kicker">Department of Physics &middot; IIT (BHU) Varanasi</p>
+          <h1>Prabhakar Singh</h1>
+          <p class="role">Professor of Physics (HAG) and former Head of Department</p>
+        </div>
+      </div>
+      <p class="lede">Ions move through solids. His group studies how, and uses that to build better fuel cells, solar cells and catalysts for clean hydrogen.</p>
+      <p class="cta">
+        <a class="btn" href="#publications">Publications</a>
+        <a class="btn alt" id="scholar" href="#" target="_blank" rel="noopener">Google Scholar</a>
+      </p>
+      <dl class="stats" id="stats"></dl>
+      <h2 class="mini">Recognition</h2>
+      <ul class="recog" id="recog"></ul>
+    </div>
+
+    <div class="lab" aria-labelledby="labTitle">
+      <div class="lab-head">
+        <h2 id="labTitle">Ion conduction in a solid electrolyte</h2>
+        <span class="tag">Interactive &middot; illustrative model</span>
+      </div>
+      <canvas id="sim" aria-label="Animated lattice showing mobile ions hopping between sites" role="img"></canvas>
+      <div class="ctrl">
+        <label for="temp">Temperature <output id="tempOut">700 K</output></label>
+        <input id="temp" type="range" min="300" max="1100" step="10" value="700">
+        <label for="ea">Activation energy <output id="eaOut">0.80 eV</output></label>
+        <input id="ea" type="range" min="0.2" max="1.0" step="0.05" value="0.8">
+        <label class="check" for="field"><input id="field" type="checkbox"> Apply an electric field</label>
+      </div>
+      <div class="read">
+        <div><span class="mono-l">Hop rate</span><b id="rate">0</b><small>hops per second</small></div>
+        <div><span class="mono-l">Conductivity</span><b id="sigma">0</b><small>relative to 1100 K</small></div>
+      </div>
+      <svg id="arr" viewBox="0 0 320 150" role="img" aria-label="Arrhenius plot of conductivity against inverse temperature"></svg>
+      <p class="cap">&sigma;T = A exp(&minus;E<sub>a</sub>/k<sub>B</sub>T). Conductivity rises steeply with temperature and falls with a higher barrier, which is why lowering E<sub>a</sub> is the central goal in electrolyte design.</p>
+    </div>
+  </section>
+
+  <section id="about" class="sec wrap">
+    <h2 class="side">About</h2>
+    <div class="main">
+      <div class="about">
+        <figure class="portrait">
+          <img class="avatar" src="assets/portrait.jpg" alt="Professor Prabhakar Singh" width="277" height="357" loading="lazy">
+          <figcaption>Professor, Department of Physics</figcaption>
+        </figure>
+        <div class="prose">
+          <p>Prabhakar Singh is Professor of Physics on the HAG scale at the Indian Institute of Technology (Banaras Hindu University), Varanasi. He served as Head of the Department of Physics from 2017 to 2020.</p>
+          <p>He completed his M.Sc. in Physics and M.Tech. in Materials Science and Technology at Banaras Hindu University and earned his Ph.D. magna cum laude at the University of M&uuml;nster, Germany, working on broad-band conductivity spectroscopy of supercooled molten salts. He joined IIT (BHU) in 2007 after more than eight years of teaching at Udai Pratap College, Varanasi, and at IGNOU, New Delhi.</p>
+          <p>In more than two and a half decades he has published over 185 peer-reviewed papers, a monograph and sixteen book chapters, co-edited <em>Nanomaterials: Advances and Applications</em>, and guided twenty doctoral students. He serves on the editorial boards of <em>Scientific Reports</em> and <em>Frontiers in Electronic Materials</em> and on the senates and boards of studies of several institutes and universities.</p>
+        </div>
+      </div>
+      <div class="cols2">
+        <div>
+          <h3>Education</h3>
+          <ul class="tl" id="education"></ul>
+        </div>
+        <div>
+          <h3>Career</h3>
+          <ul class="tl" id="career"></ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="research" class="sec tint">
+    <div class="wrap sec-in">
+      <h2 class="side">Research</h2>
+      <div class="main">
+        <p class="note">Five connected themes, all concerned with how charge and ions move through materials. Select a theme to see the related papers.</p>
+        <ul class="themes" id="themes"></ul>
+        <h3>Sponsored projects</h3>
+        <div class="seg" role="group" aria-label="Filter projects" id="projFilter">
+          <button type="button" class="on" data-v="all">All</button>
+          <button type="button" data-v="Running">Running</button>
+          <button type="button" data-v="Completed">Completed</button>
+        </div>
+        <ul class="list" id="projects"></ul>
+        <h3>Funding agencies</h3>
+        <ul class="agencies" id="agencies"></ul>
+      </div>
+    </div>
+  </section>
+
+  <section id="publications" class="sec wrap">
+    <h2 class="side">Publications</h2>
+    <div class="main">
+      <p class="note">A selection of recent papers. The complete record, with live citation counts, is on <a id="scholar2" href="#" target="_blank" rel="noopener">Google Scholar</a>.</p>
+      <div class="filters">
+        <label class="srch" for="q"><span class="vh">Search publications</span><input id="q" type="search" placeholder="Search title, author or journal" autocomplete="off"></label>
+        <div class="chips" id="topicChips" role="group" aria-label="Filter by theme"></div>
+      </div>
+      <p class="count" id="count" aria-live="polite"></p>
+      <ol class="pubs" id="pubs"></ol>
+      <button class="btn alt" id="morePubs" type="button" hidden>Show more</button>
+      <div class="cols2">
+        <div>
+          <h3>Patents</h3>
+          <ul class="list" id="patents"></ul>
+        </div>
+        <div>
+          <h3>Books</h3>
+          <ul class="list" id="books"></ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="teaching" class="sec tint">
+    <div class="wrap sec-in">
+      <h2 class="side">Teaching</h2>
+      <div class="main">
+        <p class="note">Courses taught, and in several cases designed with colleagues in the department. He received the Institute&rsquo;s Best Teacher Award in 2025.</p>
+        <ul class="grid" id="courses"></ul>
+      </div>
+    </div>
+  </section>
+
+  <section id="group" class="sec wrap">
+    <h2 class="side">Research group</h2>
+    <div class="main">
+      <h3>Current doctoral students</h3>
+      <ul class="names" id="current"></ul>
+      <h3>Doctoral alumni <span class="sub" id="alumCount"></span></h3>
+      <p class="note">Select a name to see the thesis title.</p>
+      <ul class="alumni" id="alumni"></ul>
+    </div>
+  </section>
+
+  <section id="honours" class="sec tint">
+    <div class="wrap sec-in">
+      <h2 class="side">Honours &amp; service</h2>
+      <div class="main">
+        <div class="cols2">
+          <div>
+            <h3>Awards and editorial roles</h3>
+            <ul class="tl plain" id="honoursList"></ul>
+          </div>
+          <div>
+            <h3>Institutional service</h3>
+            <ul class="tl" id="service"></ul>
+          </div>
+        </div>
+        <h3>Invited visits and collaboration</h3>
+        <ul class="visits" id="visits"></ul>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact" class="sec wrap">
+    <h2 class="side">Contact</h2>
+    <div class="main cols2">
+      <address>
+        <p class="addr">Department of Physics<br>Indian Institute of Technology (BHU)<br>Varanasi 221005, India</p>
+        <p><a class="mail" id="mail" href="#"></a></p>
+      </address>
+      <div>
+        <p class="note">Prospective doctoral students and collaborators are welcome to write with a short description of their interests.</p>
+        <p><a id="profile" href="#" target="_blank" rel="noopener">Institute faculty page</a><br><a id="scholar3" href="#" target="_blank" rel="noopener">Google Scholar profile</a></p>
+      </div>
+    </div>
+  </section>
+</main>
+
+<a class="totop" id="totop" href="#home" aria-label="Back to top" hidden>&uarr;</a>
+<footer>
+  <div class="wrap"><p>&copy; <span id="yr"></span> Prabhakar Singh &middot; Department of Physics, IIT (BHU) Varanasi</p></div>
+</footer>
+
+<script src="js/data.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>
