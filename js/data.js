@@ -12,6 +12,16 @@ window.SITE = {
     { n: 12, l: "Sponsored projects as PI" }
   ],
 
+  recog: [
+    ["2025", "Best Teacher Award", "IIT (BHU) Varanasi"],
+    ["2025", "OVDF Fellowship", "Anusandhan National Research Foundation"],
+    ["2023", "ACerS Global Ambassador", "American Ceramic Society"],
+    ["2021", "Global Star Award", "American Ceramic Society"],
+    ["", "Fellow", "International Academy of Physical Sciences"],
+    ["", "Editorial Board", "Scientific Reports (Nature Portfolio)"]
+  ],
+  agencies: ["DST", "SERB", "DRDO Naval Research Board", "BRNS", "CSIR\u2013HRDG", "UP Council of Science and Technology", "DST\u2013MOST India\u2013Taiwan", "UPEIDA", "IIT (BHU)"],
+
   topics: {
     electrolytes: "Electrolytes & fuel cells",
     perovskites: "Halide perovskites",

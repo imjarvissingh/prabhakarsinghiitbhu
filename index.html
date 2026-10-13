@@ -8,6 +8,12 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Serif:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%230c1f3a'/%3E%3Ctext x='16' y='22' font-family='monospace' font-size='15' font-weight='700' text-anchor='middle' fill='%235cc2e6'%3EPS%3C/text%3E%3C/svg%3E">
+<meta property="og:type" content="profile">
+<meta property="og:title" content="Prabhakar Singh | Professor of Physics, IIT (BHU)">
+<meta property="og:description" content="Solid electrolytes, fuel cells, halide perovskites and electrocatalysis. Publications, research group and contact.">
+<meta name="twitter:card" content="summary">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Person","name":"Prabhakar Singh","jobTitle":"Professor of Physics","affiliation":{"@type":"CollegeOrUniversity","name":"Indian Institute of Technology (BHU) Varanasi"},"alumniOf":["University of Münster","Banaras Hindu University"],"knowsAbout":["Solid electrolytes","Fuel cells","Halide perovskites","Electrocatalysis","Dielectric materials"],"email":"psingh.app@iitbhu.ac.in","sameAs":["https://scholar.google.com/citations?user=HVzaONMAAAAJ&hl=en","https://www.iitbhu.ac.in/dept/phy/people/psinghapp"]}</script>
 <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
@@ -24,7 +30,7 @@
     <a href="#honours">Honours</a>
     <a href="#contact">Contact</a>
   </nav>
-  <button class="icon" id="theme" type="button" aria-label="Switch colour theme"><span aria-hidden="true">&#9680;</span></button>
+  <button class="icon" id="theme" type="button" aria-label="Switch colour theme"><span aria-hidden="true">&#9728;</span></button>
   <button class="icon menu" id="menu" type="button" aria-expanded="false" aria-controls="nav" aria-label="Menu"><span aria-hidden="true">&#9776;</span></button>
 </header>
 
@@ -40,6 +46,8 @@
         <a class="btn alt" id="scholar" href="#" target="_blank" rel="noopener">Google Scholar</a>
       </p>
       <dl class="stats" id="stats"></dl>
+      <h2 class="mini">Recognition</h2>
+      <ul class="recog" id="recog"></ul>
     </div>
 
     <div class="lab" aria-labelledby="labTitle">
@@ -104,6 +112,8 @@
           <button type="button" data-v="Completed">Completed</button>
         </div>
         <ul class="list" id="projects"></ul>
+        <h3>Funding agencies</h3>
+        <ul class="agencies" id="agencies"></ul>
       </div>
     </div>
   </section>
@@ -188,6 +198,7 @@
   </section>
 </main>
 
+<a class="totop" id="totop" href="#home" aria-label="Back to top" hidden>&uarr;</a>
 <footer>
   <div class="wrap"><p>&copy; <span id="yr"></span> Prabhakar Singh &middot; Department of Physics, IIT (BHU) Varanasi</p></div>
 </footer>

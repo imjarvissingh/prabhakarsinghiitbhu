@@ -15,6 +15,8 @@
   set("stats", S.stats.map(function (s) {
     return "<div><dt data-n='" + s.n + "' data-plus='" + (s.plus ? 1 : 0) + "'>" + s.n + (s.plus ? "+" : "") + "</dt><dd>" + esc(s.l) + "</dd></div>";
   }).join(""));
+  set("recog", S.recog.map(function (r) { return "<li><b>" + esc(r[1]) + "</b><span>" + esc(r[2]) + (r[0] ? " &middot; " + r[0] : "") + "</span></li>"; }).join(""));
+  set("agencies", S.agencies.map(function (a) { return "<li>" + esc(a) + "</li>"; }).join(""));
   set("education", S.education.map(function (e) { return "<li><span class='y'>" + e[0] + "</span><span><b>" + esc(e[1]) + "</b><span class='d'>" + esc(e[2]) + "</span></span></li>"; }).join(""));
   set("career", S.career.map(function (e) { return "<li><span class='y'>" + esc(e[0]) + "</span><span>" + esc(e[1]) + "</span></li>"; }).join(""));
   set("courses", S.teaching.map(function (c) { return "<li><span class='l'>" + esc(c.l) + "</span>" + esc(c.t) + "</li>"; }).join(""));
@@ -118,6 +120,8 @@
     colors = null;
   });
   try { var saved = localStorage.getItem("theme"); if (saved) root.dataset.theme = saved; } catch (e) {}
+  var totop = $("totop");
+  window.addEventListener("scroll", function () { totop.hidden = window.scrollY < 900; }, { passive: true });
   var nav = $("nav"), menu = $("menu");
   menu.addEventListener("click", function () { menu.setAttribute("aria-expanded", nav.classList.toggle("open")); });
   nav.addEventListener("click", function () { nav.classList.remove("open"); menu.setAttribute("aria-expanded", "false"); });
