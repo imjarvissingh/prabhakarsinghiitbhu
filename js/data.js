@@ -22,6 +22,15 @@ window.SITE = {
   ],
   agencies: ["DST", "SERB", "DRDO Naval Research Board", "BRNS", "CSIR\u2013HRDG", "UP Council of Science and Technology", "DST\u2013MOST India\u2013Taiwan", "UPEIDA", "IIT (BHU)"],
 
+  faq: [
+    ["What does his group work on?", "Solid electrolytes and fuel cells, halide perovskites for solar cells, electrocatalysts for hydrogen, dielectric and ceramic materials, and energy storage. The Research section describes each theme and links to the related papers.", "research"],
+    ["How many students has he supervised?", "He has guided 20 doctoral students, 17 of whom are listed with their thesis titles in the Research group section, and several postdoctoral researchers under national fellowship schemes.", "group"],
+    ["Does the group work with other countries?", "Yes. He has research collaborations and invited visits in Italy, Taiwan, the USA, Canada, Germany, Switzerland and elsewhere. A current project is funded under the India\u2013Taiwan science cooperation programme.", "honours"],
+    ["I would like to join the group or collaborate. What should I do?", "Write by email with a short description of your background and interests, using the form in the Contact section. Doctoral admission itself follows the Institute\u2019s own process, so please also check the IIT (BHU) admissions pages.", "contact"],
+    ["Where can I read his papers?", "The Publications section lists recent papers you can search by title, author or theme. The complete record with live citation counts is on Google Scholar.", "publications"],
+    ["Which courses does he teach?", "Renewable and alternative energy, fuel cells, condensed matter physics, electromagnetic theory, materials characterization and electronics, among others. See the Teaching section.", "teaching"]
+  ],
+
   topics: {
     electrolytes: "Electrolytes & fuel cells",
     perovskites: "Halide perovskites",
